@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #de91be;
+        }
+
+        header {
+            background-color: #d84390;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e86ab4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #312e2e;
+        }
+
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #dd156f;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #89a7c7;
+        }
+
+        #confirmation {
+            background-color: #28a745;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Hide confirmation section by default */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Period Tracker</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="appointmentForm">
+            <h2>Register</h2>
+            <form id="bookingForm">
+                <label for="date">Select Date Of:</label>
+                <input type="date" id="date" required><br><br>
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Your Name" required><br><br>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" placeholder="Your Email" required><br><br>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="confirmation" class="hidden">
+            <h2>Registered!</h2>
+            <p>Thank you, <span id="confirmedName"></span>! You have been registered.</p>
+            <button id="confirmButton">Confirm</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('bookingForm');
+            const confirmation = document.getElementById('confirmation');
+            const nameInput = document.getElementById('name');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = nameInput.value.trim();
+                if (name !== '') {
+                    document.getElementById('confirmedName').textContent = name;
+                    confirmation.classList.remove('hidden');
+                } else {
+                    alert('Please enter your name.');
+                }
+            });
+
+            const confirmButton = document.getElementById('confirmButton');
+            confirmButton.addEventListener('click', function() {
+                confirmation.classList.add('hidden');
+                form.reset(); // Reset the form after confirmation
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .background-container {
+    background-image: url('floral.jpg'); /* Background image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6; /* Adjust the opacity here (0.0 to 1.0) */
+    height: 100vh; /* Set height to viewport height */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .phase-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .phase-selector button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #7c30d2;
+  }
+  
+  .phase-selector button.active {
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  .diet-recommendations {
+    text-align: center;
+  }

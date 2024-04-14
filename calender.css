@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e87e99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #e4c7d0;
+    background-color: #fffac0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff3e7e;
+    text-align: center;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.period-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.period-input label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    border: 1px solid #e4c7d0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #b21b1b;
+    color: #fff;
+}
+
+.ovulation {
+    background-color: #fa2f2fea;
+    color: #fff;
+}
+
+.label {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+    pointer-events: none;
+}

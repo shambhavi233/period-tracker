@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calendar</title>
+    <link rel="stylesheet" href="calender.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Mark Your Dates</h2>
+        <div class="options">
+            <label>Show Calendar:</label>
+            <select id="calendarType">
+                <option value="monthly">Monthly</option>
+                <option value="weekly">Weekly</option>
+            </select>
+            <label>Change Month:</label>
+            <input type="month" id="monthSelector">
+        </div>
+        <div class="period-input">
+            <label>Period Start Date:</label>
+            <input type="date" id="periodStartDate">
+            <label>Menstruation Span:</label>
+            <input type="number" id="menstruationSpan" min="1">
+            <label>Days Between Cycles:</label>
+            <input type="number" id="daysBetweenCycles" min="1">
+            <button id="markButton">Mark</button>
+        </div>
+        <div id="calendar"></div>
+    </div>
+
+    <script src="calender.js"></script>
+</body>
+</html>
